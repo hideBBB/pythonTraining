@@ -4,6 +4,8 @@ print("hello")
 
 A = input("can")
 
+A = A + "3"
+
 print(A)
 
 # # In this program, assume the following input
