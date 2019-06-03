@@ -30,7 +30,7 @@ for num in list:
 avg = multi.mean()
 print("(iii)\n",avg,"\n")
 
-# (iv) what is the std
+# (iv) what is the std deviation
 print("(iv)\n",np.std(list,axis=0)[3],"\n")
 
 # (v) find specified rows

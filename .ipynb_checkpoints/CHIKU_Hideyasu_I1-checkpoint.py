@@ -1,20 +1,50 @@
-# In this program, assume the following input
-"""
-2,1
-5,6
-"""
-import sys
+import numpy as np
 
-compA = input("Enter the first complex number in the form ""2,1"">>").split(",")
-compB = input("Enter the second complex number in the form ""5,6"">>").split(",")
+# (i) create matrix
+with open("iris.data","r") as fo:
+    list = np.array([])
+    for line in fo:
+        number = line.split(",")
+        del number[-1]
+        if len(number) != 0 :
+            FloatNumber = [float(s) for s in number]
+            list = np.append(list,FloatNumber)
 
-A = complex(int(compA[0]),int(compA[1]))
-B = complex(int(compB[0]),int(compB[1]))
+list = list.reshape(150,4)
+print("(i)\n",list,"\n")
 
-print('{:.2f}'.format(A+B))
-print('{:.2f}'.format(A-B))
-print('{:.2f}'.format(A*B))
-dev = A/B
-print('{:.2f}'.format(dev))
-print('{:.2f}'.format(abs(A)))
-print('{:.2f}'.format(abs(B)))
+# (ii) count the number of specified lines
+cnt = 0
+for num in list:
+    if num[0] > 5:
+        cnt += 1
+
+print("(ii)\n",cnt,"\n")
+
+
+# (iii) report the average
+multi = np.array([])
+for num in list:
+    multi = np.append(multi,num[0]*num[1])
+
+avg = multi.mean()
+print("(iii)\n",avg,"\n")
+
+# (iv) what is the std
+print("(iv)\n",np.std(list,axis=0)[3],"\n")
+
+# (v) find specified rows
+ans = np.array([])
+cnt = 0
+for num in list:
+    if num[2]*num[3] > 1.0:
+        ans = np.append(ans,num)
+        cnt += 1
+
+ans = ans.reshape(cnt,4)
+print("(v)\n",ans)
+
+np.save("small_petal",ans)
+
+# b = np.load("small_petal.npy")
+# print(b)
