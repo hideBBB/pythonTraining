@@ -1,5 +1,3 @@
-import sys
-
 fo = open("matrix.txt","r")
 
 def createMat():

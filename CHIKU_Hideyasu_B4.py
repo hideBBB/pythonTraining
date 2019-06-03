@@ -3,10 +3,11 @@
 2,1
 5,6
 """
-import sys
+fileName = input("Enter any fileName>>")
 
-compA = input("Enter the first complex number in the form ""2,1"">>").split(",")
-compB = input("Enter the second complex number in the form ""5,6"">>").split(",")
+with open(fileName,"r") as fo:
+    compA = fo.readline().strip().replace("\n","").split(",")
+    compB = fo.readline().strip().replace("\n","").split(",")
 
 A = complex(int(compA[0]),int(compA[1]))
 B = complex(int(compB[0]),int(compB[1]))

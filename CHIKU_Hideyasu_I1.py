@@ -7,7 +7,6 @@ with open("iris.data","r") as fo:
         number = line.split(",")
         del number[-1]
         if len(number) != 0 :
-            # print(number)
             FloatNumber = [float(s) for s in number]
             list = np.append(list,FloatNumber)
 
@@ -43,7 +42,7 @@ for num in list:
         cnt += 1
 
 ans = ans.reshape(cnt,4)
-print("(v)\n",ans) 
+print("(v)\n",ans)
 
 np.save("small_petal",ans)
 

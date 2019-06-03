@@ -1,5 +1,4 @@
 # The following program is for the sentences in the file
-import sys
 import re
 import pickle
 

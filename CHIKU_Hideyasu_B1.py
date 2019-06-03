@@ -1,5 +1,3 @@
-import sys
-
 StrYear = input("Enter any year>>")
 IntYear = int(StrYear)
 

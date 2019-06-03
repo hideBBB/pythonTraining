@@ -1,3 +1,12 @@
+# In this program, assume the following input
+"""
+2 2
+1 2
+3 4
+2 1
+4
+5
+"""
 import numpy as np
 
 fileName = input("Enter a fileName containing matrix info>>")
@@ -28,8 +37,5 @@ mat1 = createMat()
 mat2 = createMat()
 
 fo.close()
-
-# print(mat1)
-# print(mat2)
 
 print(np.dot(mat1,mat2))
