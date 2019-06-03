@@ -2,23 +2,23 @@ import sys
 
 fo = open("matrix.txt","r")
 
-def creatMat():
+def createMat():
     "create matrix from file"
     format = fo.readline().strip().replace("\n","").split(" ")
-    lineCnt = int(format[0])
-    rowCnt = int(format[1])
+    rowCnt = int(format[0])
+    columnCnt = int(format[1])
 
     mat = []
     cnt = 0
-    while cnt < lineCnt:
+    while cnt < rowCnt:
         line = fo.readline().strip().replace("\n","").split(" ")
         mat.append(line)
         cnt += 1
 
-    return mat,lineCnt,rowCnt
+    return mat,rowCnt,columnCnt
 
-mat1Ele = creatMat()
-mat2Ele = creatMat()
+mat1Ele = createMat()
+mat2Ele = createMat()
 mat1 = mat1Ele[0]
 mat2 = mat2Ele[0]
 fo.close()
