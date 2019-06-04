@@ -1,4 +1,11 @@
 # The following program is for the sentences in the file
+# Sample file B3 has the following inputs
+"""
+test and with test row
+line and test row line
+line
+"""
+
 import re
 import pickle
 

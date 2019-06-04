@@ -1,4 +1,5 @@
 # In this program, assume the following input
+# Sample file B4 has the following inputs
 """
 2,1
 5,6

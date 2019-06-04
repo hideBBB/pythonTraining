@@ -1,4 +1,5 @@
 # In this program, assume the following input
+# Sample file I2 has the following inputs
 """
 2 2
 1 2
