@@ -4,6 +4,7 @@
 1 10 5 -1
 2 -3 -1 0
 """
+import numpy as np
 import pandas as pd
 
 # s = pd.Series([1,2,3,4],index = ["a","b","c","d"])
@@ -59,7 +60,26 @@ df = df.drop(0)
 print(df)
 
 
+cat = pd.Categorical(["a", "a", "c", np.nan], categories=["b", "a", "c"])
+df = pd.DataFrame({"cat":cat, "s":["a", "c", "c", np.nan]})
+print(df)
+print(df.describe())
+print(df["cat"].describe())
 
+
+s = pd.Series(["a","b","c","a"], dtype="category")
+s.cat.categories = ["Group %s" % g for g in s.cat.categories]
+print(s.cat.categories)
+
+
+cat = pd.Series([1,2,3]).astype("category", categories=[1,2,3],ordered=True)
+cat1 = pd.Series([2,2,2]).astype("category", categories=[1,2,3],ordered=True)
+
+print(cat)
+print(cat1)
+
+
+print(cat>cat1)
 # import numpy as np
 #
 # def cos_sim(v1, v2):
