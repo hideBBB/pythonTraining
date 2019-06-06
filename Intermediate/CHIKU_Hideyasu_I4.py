@@ -80,6 +80,16 @@ print(cat1)
 
 
 print(cat>cat1)
+
+df=pd.read_csv("temp.csv")
+print(df)
+
+df=pd.read_csv("temp.csv",names=['a','b','c','d','e'],header=0)
+df=pd.read_csv("temp.csv", skiprows=2,names=['a','b','c','d','e'])
+
+print(df)
+
+
 # import numpy as np
 #
 # def cos_sim(v1, v2):
